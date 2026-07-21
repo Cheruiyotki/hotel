@@ -43,6 +43,7 @@ export const Navbar = () => {
       submenu: [
         { label: 'Services & Amenities', path: '/amenities' },
         { label: 'Dine', path: '/dining' },
+        { label: 'Restaurant Menu', path: '/dining#hotel-menu' },
       ]
     },
     {

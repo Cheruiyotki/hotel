@@ -453,11 +453,20 @@ export const Home = () => {
                   "{testimonial.text}"
                 </p>
                 <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
+                  {testimonial.image ? (
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div
+                      className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-gold/15 text-sm font-bold text-primary-gold"
+                      aria-hidden="true"
+                    >
+                      {testimonial.initials}
+                    </div>
+                  )}
                   <div>
                     <p className="font-semibold text-primary-navy">{testimonial.name}</p>
                     <p className="text-sm text-gray-500">{testimonial.title}</p>
