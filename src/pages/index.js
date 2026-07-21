@@ -1,0 +1,11 @@
+export { Home } from './Home';
+export { Rooms } from './Rooms';
+export { RoomDetails } from './RoomDetails';
+export { Reservations } from './Reservations';
+export { Gallery } from './Gallery';
+export { Amenities } from './Amenities';
+export { Dining } from './Dining';
+export { Events } from './Events';
+export { ThingsToDo } from './ThingsToDo';
+export { Conferences } from './Conferences';
+export { Contact } from './Contact';
