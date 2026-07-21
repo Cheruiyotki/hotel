@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
@@ -7,6 +7,7 @@ import {
   Clock,
   Coffee,
   GlassWater,
+  Soup,
   Utensils,
 } from 'lucide-react';
 import { Hero, SectionHeading, Button } from '../components';
@@ -14,13 +15,21 @@ import { menuSections } from '../data/menu';
 
 const sectionIcons = {
   breakfast: Coffee,
-  food: Utensils,
-  snacks: CakeSlice,
-  drinks: GlassWater,
+  'snacks-eggs': CakeSlice,
+  'light-dishes': Soup,
+  'grill-local': Utensils,
+  'chicken-fish': ChefHat,
+  'platters-choma': Utensils,
+  'pasta-desserts': CakeSlice,
+  'hot-drinks': Coffee,
+  'cold-drinks': GlassWater,
 };
 
 export const Dining = () => {
+  const [activeMenuType, setActiveMenuType] = useState('food');
+  const [activeCategory, setActiveCategory] = useState('breakfast');
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.hash === '#hotel-menu') {
@@ -33,7 +42,21 @@ export const Dining = () => {
     window.scrollTo(0, 0);
   }, [location.hash]);
 
-  const navigate = useNavigate();
+  const activeSections = useMemo(
+    () => menuSections.filter((section) => section.type === activeMenuType),
+    [activeMenuType]
+  );
+
+  const selectedSection = useMemo(
+    () => activeSections.find((section) => section.id === activeCategory) || activeSections[0],
+    [activeCategory, activeSections]
+  );
+
+  const handleMenuTypeChange = (type) => {
+    const nextSections = menuSections.filter((section) => section.type === type);
+    setActiveMenuType(type);
+    setActiveCategory(nextSections[0]?.id || '');
+  };
 
   const diningOptions = [
     {
@@ -163,70 +186,111 @@ export const Dining = () => {
             subtitle="A hotel-style dining menu with prices for breakfast, main meals, light bites, desserts, and drinks."
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {menuSections.map((section, idx) => {
-              const Icon = sectionIcons[section.id] || Utensils;
-
-              return (
-                <motion.article
-                  key={section.id}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.65, delay: (idx % 2) * 0.1 }}
-                  viewport={{ once: true }}
-                  className="overflow-hidden rounded-lg border border-primary-gold/20 bg-golden-50 shadow-lg"
+          <div className="-mx-4 mb-14 bg-[#171717] px-4 py-5 shadow-xl md:-mx-8">
+            <div className="mx-auto mb-5 flex w-fit rounded-full bg-white/10 p-1">
+              {[
+                { id: 'food', label: 'Food Menu', Icon: Utensils },
+                { id: 'drinks', label: 'Drinks Menu', Icon: GlassWater },
+              ].map(({ id, label, Icon }) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => handleMenuTypeChange(id)}
+                  className={`flex min-w-[150px] items-center justify-center gap-2 rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] transition-all ${
+                    activeMenuType === id
+                      ? 'bg-primary-gold text-white shadow-lg'
+                      : 'text-white/60 hover:text-white'
+                  }`}
+                  aria-pressed={activeMenuType === id}
                 >
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={section.image}
-                      alt={`${section.title} at Golden Gates Hotel`}
-                      className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/85 via-primary-navy/25 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-gold text-white shadow-lg">
-                        <Icon size={24} aria-hidden="true" />
-                      </div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-primary-gold">
-                        {section.eyebrow}
-                      </p>
-                      <h3 className="mt-1 text-3xl font-heading font-bold text-white">
-                        {section.title}
-                      </h3>
-                    </div>
-                  </div>
+                  <Icon size={15} aria-hidden="true" />
+                  {label}
+                </button>
+              ))}
+            </div>
 
-                  <div className="p-6 md:p-8">
-                    <p className="mb-4 text-gray-700">
-                      {section.description}
-                    </p>
-                    <div className="mb-6 flex items-center gap-2 text-sm font-semibold text-primary-navy">
-                      <Clock size={16} className="text-primary-gold" aria-hidden="true" />
-                      <span>{section.availability}</span>
-                    </div>
+            <div className="flex gap-3 overflow-x-auto border-t border-white/10 pt-4">
+              {activeSections.map((section) => {
+                const Icon = sectionIcons[section.id] || Utensils;
+                const isActive = selectedSection?.id === section.id;
 
-                    <div className="space-y-5">
-                      {section.items.map((item) => (
-                        <div key={item.name} className="border-b border-dotted border-primary-gold/50 pb-4 last:border-b-0 last:pb-0">
-                          <div className="flex items-start justify-between gap-4">
-                            <h4 className="text-lg font-heading font-bold text-primary-navy">
-                              {item.name}
-                            </h4>
-                            <p className="shrink-0 rounded-full bg-primary-navy px-3 py-1 text-sm font-bold text-white">
-                              {item.price}
-                            </p>
-                          </div>
-                          <p className="mt-2 text-sm text-gray-600">
-                            {item.description}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.article>
-              );
-            })}
+                return (
+                  <button
+                    key={section.id}
+                    type="button"
+                    onClick={() => setActiveCategory(section.id)}
+                    className={`group flex shrink-0 items-center gap-2 border-b-2 px-4 pb-4 pt-1 text-[11px] font-semibold uppercase tracking-[0.22em] transition-all ${
+                      isActive
+                        ? 'border-primary-gold text-primary-gold'
+                        : 'border-transparent text-white/55 hover:text-white'
+                    }`}
+                    aria-pressed={isActive}
+                  >
+                    <Icon size={14} aria-hidden="true" />
+                    {section.title}
+                  </button>
+                );
+              })}
+            </div>
           </div>
+
+          {selectedSection && (
+            <motion.div
+              key={selectedSection.id}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35 }}
+            >
+              <div className="mb-6 text-center">
+                <p className="mb-3 flex items-center justify-center gap-4 text-xs font-semibold uppercase tracking-[0.32em] text-primary-gold">
+                  <span className="h-px w-10 bg-primary-gold" />
+                  {selectedSection.eyebrow}
+                  <span className="h-px w-10 bg-primary-gold" />
+                </p>
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-primary-navy">
+                  {selectedSection.title}
+                </h3>
+                <p className="mt-2 text-base text-primary-navy/80">
+                  {selectedSection.description}
+                </p>
+                <div className="mt-3 flex items-center justify-center gap-2 text-sm font-semibold text-primary-navy/75">
+                  <Clock size={16} className="text-primary-gold" aria-hidden="true" />
+                  <span>{selectedSection.availability}</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                {selectedSection.items.map((item, idx) => (
+                  <motion.article
+                    key={item.name}
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35, delay: idx * 0.04 }}
+                    className="overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                  >
+                    <div className="h-44 overflow-hidden bg-gray-200">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h4 className="text-xl font-heading font-bold text-primary-navy">
+                        {item.name}
+                      </h4>
+                      <p className="mt-2 min-h-[56px] text-sm text-primary-navy/75">
+                        {item.description}
+                      </p>
+                      <p className="mt-5 text-sm font-bold uppercase tracking-wide text-green-700">
+                        {item.price}
+                      </p>
+                    </div>
+                  </motion.article>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </div>
       </section>
 
