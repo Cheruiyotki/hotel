@@ -8,7 +8,8 @@
   }
 
   body {
-    @apply font-body bg-primary-light text-gray-800;
+    @apply font-body bg-primary-light;
+    color: #12213A;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -28,21 +29,22 @@
   }
 
   p {
-    @apply leading-relaxed text-gray-700;
+    @apply leading-relaxed;
+    color: #1C2C44;
   }
 }
 
 @layer components {
   .btn {
-    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300 text-center cursor-pointer inline-block;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center cursor-pointer inline-block;
   }
 
   .btn-primary {
-    @apply btn bg-primary-navy text-white hover:bg-navy-800 shadow-md hover:shadow-lg;
+    @apply btn bg-primary-navy text-white hover:bg-navy-800 shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
-    @apply btn bg-primary-gold text-white hover:bg-yellow-700 shadow-md hover:shadow-lg;
+    @apply btn bg-primary-navy text-white hover:bg-navy-800 shadow-sm hover:shadow-md;
   }
 
   .btn-outline {
@@ -50,7 +52,7 @@
   }
 
   .btn-white {
-    @apply btn bg-white text-primary-navy hover:bg-gray-100 border border-gray-300;
+    @apply btn bg-white text-primary-navy hover:bg-golden-50 border border-gray-300;
   }
 
   .section {
@@ -70,7 +72,8 @@
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden;
+    @apply rounded-2xl border border-white/80 bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden;
+    box-shadow: 0 24px 70px rgba(38, 48, 68, 0.10);
   }
 
   .card-hover {
@@ -86,7 +89,7 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-navy to-primary-gold bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-navy to-navy-700 bg-clip-text text-transparent;
   }
 
   .underline-gold {
@@ -113,12 +116,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #B79A63;
+  background: #8A785D;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9D7E4F;
+  background: #6F604B;
 }
 
 /* Image optimization */
@@ -137,4 +140,25 @@ img {
 
 .transition-smooth {
   @apply transition-all duration-500 ease-out;
+}
+
+.section,
+.section.bg-white,
+.section.bg-primary-light {
+  background-color: #E9E8E5;
+}
+
+.section.bg-primary-navy {
+  background-color: #263044;
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+}
+
+input,
+select,
+textarea {
+  background-color: #FBFAF8;
+  color: #12213A;
 }

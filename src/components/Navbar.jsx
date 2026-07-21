@@ -67,8 +67,8 @@ export const Navbar = () => {
     <nav 
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-primary-navy shadow-lg' 
-          : 'bg-gradient-to-b from-black/40 to-transparent'
+          ? 'bg-primary-navy shadow-lg backdrop-blur-md'
+    : 'bg-primary-navy'
       }`}
     >
       <div className="container-custom flex items-center justify-between h-20 md:h-24">

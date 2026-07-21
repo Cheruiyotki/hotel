@@ -349,7 +349,7 @@ export const Home = () => {
       </section>
 
       {/* Location Section */}
-      <section className="section bg-primary-navy">
+      <section className="section bg-primary-light">
         <div className="container-custom">
           <SectionHeading
             label="Location"
@@ -366,7 +366,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-white"
+              className="text-primary-navy"
             >
               <h3 className="text-3xl font-heading font-bold mb-6">Proximity to Key Attractions</h3>
               <ul className="space-y-4">
@@ -386,7 +386,7 @@ export const Home = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: idx * 0.05 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-3 text-lg"
+                    className="flex items-center gap-3 text-lg text-primary-navy"
                   >
                     <span className="text-primary-gold text-2xl">→</span>
                     {attraction}
