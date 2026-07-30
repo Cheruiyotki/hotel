@@ -26,7 +26,7 @@ export const BookingWidget = ({ className = '' }) => {
   };
 
   return (
-    <div className={`bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-6 md:p-8 max-w-4xl mx-auto ${className}`}>
+    <div className={`booking-card bg-white/95 backdrop-blur ${className}`}>
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-3">
         
         {/* Check-in */}

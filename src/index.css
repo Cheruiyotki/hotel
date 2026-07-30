@@ -36,11 +36,11 @@
 
 @layer components {
   .btn {
-    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-center cursor-pointer inline-block;
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-300 text-center cursor-pointer inline-block;
   }
 
   .btn-primary {
-    @apply btn bg-primary-navy text-white hover:bg-navy-800 shadow-sm hover:shadow-md;
+    @apply btn bg-primary-navy text-white hover:bg-navy-800 shadow-md hover:shadow-lg;
   }
 
   .btn-secondary {
@@ -48,7 +48,7 @@
   }
 
   .btn-outline {
-    @apply btn border-2 border-primary-navy text-primary-navy hover:bg-primary-navy hover:text-white;
+    @apply btn bg-white text-primary-navy border border-primary-navy hover:bg-primary-navy hover:text-white shadow-sm;
   }
 
   .btn-white {
@@ -73,7 +73,7 @@
 
   .card {
     @apply rounded-2xl border border-white/80 bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden;
-    box-shadow: 0 24px 70px rgba(38, 48, 68, 0.10);
+    box-shadow: 0 30px 80px rgba(38, 48, 68, 0.12);
   }
 
   .card-hover {
@@ -86,6 +86,18 @@
 
   .glass {
     @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl;
+  }
+
+  /* Booking card specific styling to match design */
+  .booking-card {
+    @apply bg-white rounded-[38px] shadow-[0_30px_80px_rgba(38,48,68,0.12)] p-6 md:p-8 max-w-5xl mx-auto;
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .booking-card input,
+  .booking-card select {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-0 bg-white;
+    box-shadow: inset 0 2px 6px rgba(17,24,39,0.03);
   }
 
   .text-gradient {
