@@ -65,6 +65,11 @@ export const Home = () => {
             }
           },
           {
+            label: 'VIEW MENU',
+            variant: 'outline',
+            onClick: () => navigate('/dining#hotel-menu')
+          },
+          {
             label: 'EXPLORE THE HOTEL',
             variant: 'outline',
             onClick: () => navigate('/amenities')
