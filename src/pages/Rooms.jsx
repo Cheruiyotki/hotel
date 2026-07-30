@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, RoomCard } from '../components';
+import { Hero, SectionHeading, RoomCard, Seo } from '../components';
+import { SITE } from '../config/site';
 import { rooms } from '../data/rooms';
 
 export const Rooms = () => {
@@ -17,6 +18,12 @@ export const Rooms = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Rooms & Suites — ${SITE.name}`}
+        description={`Explore ${SITE.name} rooms & suites: Premier, Suite, Superior, Deluxe — modern comforts, premium amenities, and garden views.`}
+        image={`https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1600&h=900&fit=crop`}
+        url={`${SITE.url}/rooms`}
+      />
       {/* Hero */}
       <Hero
         title="Rooms Designed for Rest & Comfort"

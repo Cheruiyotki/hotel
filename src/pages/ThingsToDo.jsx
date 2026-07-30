@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Seo } from '../components';
+import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { Hero, SectionHeading, ExperienceCard } from '../components';
 import { experiences } from '../data/rooms';
@@ -18,6 +20,11 @@ export const ThingsToDo = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Things To Do — ${SITE.name}`}
+        description={`Explore activities and local attractions near ${SITE.name}: Aberdare National Park, guided nature walks, picnicking, waterfalls, and cultural sites.`}
+        url={`${SITE.url}/things-to-do`}
+      />
       {/* Hero */}
       <Hero
         title="Things To Do"

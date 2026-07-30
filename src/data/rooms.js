@@ -6,7 +6,12 @@ export const rooms = [
     occupancy: 2,
     bedType: 'King Bed',
     amenities: ['Free Wi-Fi', 'En-suite Bathroom', 'Air Conditioning', 'Satellite TV', 'Work Desk', 'Premium Bedding'],
-    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&h=800&fit=crop'
+    ],
     category: 'premium'
   },
   {
@@ -16,7 +21,12 @@ export const rooms = [
     occupancy: 2,
     bedType: 'King Bed + Living Area',
     amenities: ['Living Room', 'Free Wi-Fi', 'Kitchenette', 'Premium Toiletries', 'Work Area', 'Air Conditioning'],
-    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1505691723518-36a79b2f9b42?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=1200&h=800&fit=crop'
+    ],
     category: 'premium'
   },
   {
@@ -26,7 +36,12 @@ export const rooms = [
     occupancy: 2,
     bedType: 'Queen Bed',
     amenities: ['Free Wi-Fi', 'Modern Bathroom', 'Air Conditioning', 'Flat-screen TV', 'Work Desk', 'Minibar'],
-    image: 'https://images.unsplash.com/photo-1540932239986-310128078ceb?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1540932239986-310128078ceb?w=1200&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1540932239986-310128078ceb?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop'
+    ],
     category: 'superior'
   },
   {
@@ -36,7 +51,12 @@ export const rooms = [
     occupancy: 2,
     bedType: 'Queen Bed',
     amenities: ['Free Wi-Fi', 'Modern Amenities', 'Air Conditioning', 'TV', 'Work Desk', 'Bathroom'],
-    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1505691723518-36a79b2f9b42?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=1200&h=800&fit=crop'
+    ],
     category: 'standard'
   },
   {
@@ -46,7 +66,12 @@ export const rooms = [
     occupancy: 4,
     bedType: 'Multi-bed Configuration',
     amenities: ['Free Wi-Fi', 'Multiple Beds', 'Air Conditioning', 'Bathroom', 'Lounge Area', 'TV'],
-    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&h=800&fit=crop'
+    ],
     category: 'family'
   },
   {
@@ -56,7 +81,12 @@ export const rooms = [
     occupancy: 2,
     bedType: 'Twin Beds',
     amenities: ['Free Wi-Fi', 'Modern Bathroom', 'Air Conditioning', 'TV', 'Work Area', 'Premium Bedding'],
-    image: 'https://images.unsplash.com/photo-1540932239986-310128078ceb?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1540932239986-310128078ceb?w=1200&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1540932239986-310128078ceb?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1505691723518-36a79b2f9b42?w=1200&h=800&fit=crop'
+    ],
     category: 'standard'
   },
   {
@@ -66,7 +96,12 @@ export const rooms = [
     occupancy: 1,
     bedType: 'Single or Double Bed',
     amenities: ['Free Wi-Fi', 'Bathroom', 'Air Conditioning', 'TV', 'Essential Amenities'],
-    image: 'https://images.unsplash.com/photo-1611632622527-1c7b15d9a01b?w=800&h=600&fit=crop',
+    image: 'https://images.unsplash.com/photo-1611632622527-1c7b15d9a01b?w=1200&h=800&fit=crop',
+    images: [
+      'https://images.unsplash.com/photo-1611632622527-1c7b15d9a01b?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&h=800&fit=crop'
+    ],
     category: 'standard'
   },
 ];

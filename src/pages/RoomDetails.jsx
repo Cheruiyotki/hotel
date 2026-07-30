@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { rooms } from '../data/rooms';
-import { Button, SectionHeading } from '../components';
+import { Button, SectionHeading, Seo } from '../components';
+import { SITE } from '../config/site';
 import { ChevronLeft, Users, BedDouble, Wifi, Tv, Wind } from 'lucide-react';
 
 export const RoomDetails = () => {
@@ -29,26 +30,65 @@ export const RoomDetails = () => {
 
   return (
     <div className="w-full">
-      {/* Back Button */}
-      <div className="sticky top-24 md:top-28 z-10 bg-white border-b border-gray-200">
-        <div className="container-custom py-4">
+      <Seo
+        title={`${room.name} — ${SITE.name}`}
+        description={room.description.slice(0, 160)}
+        image={room.image}
+        url={`${SITE.url}/rooms/${room.id}`}
+        type="product"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "HotelRoom",
+          "name": room.name,
+          "description": room.description,
+          "image": room.images || [room.image],
+          "url": `${SITE.url}/rooms/${room.id}`,
+          "occupancy": room.occupancy
+        }}
+      />
+      {/* Back Button - full width small button */}
+      <div className="w-full bg-white">
+        <div className="container-custom py-3">
           <button
             onClick={() => navigate('/rooms')}
-            className="flex items-center gap-2 text-primary-navy hover:text-primary-gold transition-colors"
+            className="inline-flex items-center gap-2 text-primary-navy hover:text-primary-gold transition-colors text-sm px-3 py-2 bg-white border border-gray-200 rounded-lg shadow-sm"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={16} />
             <span>Back to Rooms</span>
           </button>
         </div>
       </div>
 
-      {/* Hero Image */}
-      <div className="relative w-full h-96 md:h-[500px] overflow-hidden bg-gray-200">
-        <img
-          src={room.image}
-          alt={room.name}
-          className="w-full h-full object-cover"
-        />
+      {/* Image Gallery Hero */}
+      <div className="relative w-full bg-gray-200">
+        <div className="container-custom">
+          <div className="relative w-full h-96 md:h-[500px] overflow-hidden rounded-b-2xl">
+            <img
+              src={room.image}
+              alt={room.name}
+              className="w-full h-full object-cover"
+            />
+            {/* Horizontal scrollable thumbnails */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-10 w-full max-w-4xl">
+              <div className="overflow-x-auto no-scrollbar px-4 py-2">
+                <div className="flex gap-4">
+                  {room.images && room.images.map((src, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        const mainImg = document.querySelector('.room-main-img');
+                        if (mainImg) mainImg.src = src;
+                      }}
+                      className="flex-shrink-0 w-40 h-28 rounded-xl overflow-hidden border border-white shadow-md"
+                    >
+                      <img src={src} alt={`${room.name} ${idx+1}`} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Room Details */}

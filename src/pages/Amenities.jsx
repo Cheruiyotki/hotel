@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Seo } from '../components';
+import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { Hero, SectionHeading, AmenityCard } from '../components';
 import { amenities } from '../data/rooms';
@@ -10,6 +12,11 @@ export const Amenities = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Amenities & Services — ${SITE.name}`}
+        description={`Discover facilities at ${SITE.name}: swimming pool, gym, business centre, free Wi-Fi, conference facilities and more to make your stay comfortable.`}
+        url={`${SITE.url}/amenities`}
+      />
       {/* Hero */}
       <Hero
         title="Services & Amenities"

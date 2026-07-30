@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, Button } from '../components';
+import { Hero, SectionHeading, Button, Seo } from '../components';
+import { SITE } from '../config/site';
 import { MapPin, Mail, Phone, Clock, AlertCircle } from 'lucide-react';
 
 export const Contact = () => {
@@ -62,6 +63,11 @@ export const Contact = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Contact — ${SITE.name}`}
+        description={`Get in touch with ${SITE.name} reservations and guest services. Call, email, or use our contact form for bookings, group requests, and inquiries.`}
+        url={`${SITE.url}/contact`}
+      />
       {/* Hero */}
       <Hero
         title="Let's Plan Your Stay"

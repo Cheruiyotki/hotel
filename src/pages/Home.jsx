@@ -9,7 +9,9 @@ import {
   RoomCard,
   AmenityCard,
   ExperienceCard,
+  Seo,
 } from '../components';
+import { SITE } from '../config/site';
 import { rooms, amenities, experiences, testimonials } from '../data/rooms';
 import { Star, ArrowRight } from 'lucide-react';
 
@@ -48,6 +50,12 @@ export const Home = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`${SITE.name} — Luxury Hotel in Nyeri`}
+        description={"Golden Gates Hotel in Nyeri, Kenya — boutique country hospitality offering comfortable rooms, dining, conference facilities, and curated experiences near Aberdare National Park."}
+        image={"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop"}
+        url={`${SITE.url}/`}
+      />
       {/* Hero Section */}
       <Hero
         title="Escape to Serenity at Golden Gates Hotel"

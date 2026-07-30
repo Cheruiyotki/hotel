@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Seo } from '../components';
+import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { Hero, SectionHeading, Button } from '../components';
 import { Check, AlertCircle } from 'lucide-react';
@@ -73,6 +75,11 @@ export const Reservations = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Reservations — ${SITE.name}`}
+        description={`Request a reservation or inquiry at ${SITE.name}. Share your dates and preferences and we'll reply within 24 hours.`}
+        url={`${SITE.url}/reservations`}
+      />
       {/* Hero */}
       <Hero
         title="Plan Your Perfect Stay"

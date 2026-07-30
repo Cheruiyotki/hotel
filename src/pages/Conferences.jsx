@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Seo } from '../components';
+import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { Hero, SectionHeading, Button } from '../components';
 import { useNavigate } from 'react-router-dom';
@@ -58,6 +60,11 @@ export const Conferences = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Conference Facilities — ${SITE.name}`}
+        description={`Professional conference and meeting spaces at ${SITE.name}. Modern AV, catering, and flexible room layouts for seminars, trainings and corporate events.`}
+        url={`${SITE.url}/conferences`}
+      />
       {/* Hero */}
       <Hero
         title="Conference Facilities Designed for Productive Gatherings"

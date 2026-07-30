@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Seo } from '../components';
+import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { Hero, SectionHeading, Button } from '../components';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +14,11 @@ export const Events = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Meetings & Events — ${SITE.name}`}
+        description={`Host your meetings, conferences, and special events at ${SITE.name}. Flexible event spaces, catering, and professional planning services available.`}
+        url={`${SITE.url}/events`}
+      />
       {/* Hero */}
       <Hero
         title="Meetings, Events & Special Days"

@@ -7,3 +7,4 @@ export { BookingWidget } from './BookingWidget';
 export { RoomCard } from './RoomCard';
 export { AmenityCard } from './AmenityCard';
 export { ExperienceCard } from './ExperienceCard';
+export { Seo } from './Seo';

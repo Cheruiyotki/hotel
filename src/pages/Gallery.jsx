@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Seo } from '../components';
+import { SITE } from '../config/site';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Hero, SectionHeading } from '../components';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -118,6 +120,11 @@ export const Gallery = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Gallery — ${SITE.name}`}
+        description={`Explore the photo gallery of ${SITE.name} — images of rooms, dining, events, and the beautiful grounds surrounding our hotel near Nyeri.`}
+        url={`${SITE.url}/gallery`}
+      />
       {/* Hero */}
       <Hero
         title="Photo Gallery"

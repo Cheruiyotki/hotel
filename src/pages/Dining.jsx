@@ -1,4 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { Seo } from '../components';
+import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
@@ -88,6 +90,11 @@ export const Dining = () => {
 
   return (
     <div className="w-full">
+      <Seo
+        title={`Dining & Menu — ${SITE.name}`}
+        description={`Savor authentic Kenyan and international cuisine at ${SITE.name}. View our hotel menu for breakfast, main meals, light bites, desserts, and drinks.`}
+        url={`${SITE.url}/dining`}
+      />
       <Hero
         title="Savor Every Moment"
         subtitle="Walk in & savor serenity, delightful delicacies, & comfort"
