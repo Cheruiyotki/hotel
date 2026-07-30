@@ -18,7 +18,7 @@ export const Hero = ({
           alt="Hero"
           className="w-full h-full object-cover"
         />
-        {overlay && <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20"></div>}
+        {overlay && <div className="hero-overlay"></div>}
       </div>
 
       {/* Content */}
