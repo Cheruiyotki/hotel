@@ -186,8 +186,8 @@ export const Dining = () => {
             subtitle="A hotel-style dining menu with prices for breakfast, main meals, light bites, desserts, and drinks."
           />
 
-          <div className="-mx-4 mb-14 bg-[#171717] px-4 py-5 shadow-xl md:-mx-8">
-            <div className="mx-auto mb-5 flex w-fit rounded-full bg-white/10 p-1">
+          <div className="-mx-4 mb-14 rounded-[2rem] border border-primary-gold/20 bg-primary-navy px-4 py-6 shadow-2xl md:-mx-8 md:px-8">
+            <div className="mx-auto mb-5 flex w-fit rounded-full border border-white/10 bg-white/10 p-1 backdrop-blur-sm">
               {[
                 { id: 'food', label: 'Food Menu', Icon: Utensils },
                 { id: 'drinks', label: 'Drinks Menu', Icon: GlassWater },
@@ -199,7 +199,7 @@ export const Dining = () => {
                   className={`flex min-w-[150px] items-center justify-center gap-2 rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] transition-all ${
                     activeMenuType === id
                       ? 'bg-primary-gold text-white shadow-lg'
-                      : 'text-white/60 hover:text-white'
+                      : 'text-white/70 hover:bg-white/10 hover:text-white'
                   }`}
                   aria-pressed={activeMenuType === id}
                 >
@@ -222,7 +222,7 @@ export const Dining = () => {
                     className={`group flex shrink-0 items-center gap-2 border-b-2 px-4 pb-4 pt-1 text-[11px] font-semibold uppercase tracking-[0.22em] transition-all ${
                       isActive
                         ? 'border-primary-gold text-primary-gold'
-                        : 'border-transparent text-white/55 hover:text-white'
+                        : 'border-transparent text-white/70 hover:text-white'
                     }`}
                     aria-pressed={isActive}
                   >
@@ -266,7 +266,7 @@ export const Dining = () => {
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.35, delay: idx * 0.04 }}
-                    className="overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    className="overflow-hidden rounded-2xl border border-primary-gold/10 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
                     <div className="h-44 overflow-hidden bg-gray-200">
                       <img
@@ -282,7 +282,7 @@ export const Dining = () => {
                       <p className="mt-2 min-h-[56px] text-sm text-primary-navy/75">
                         {item.description}
                       </p>
-                      <p className="mt-5 text-sm font-bold uppercase tracking-wide text-green-700">
+                      <p className="mt-5 text-sm font-bold uppercase tracking-wide text-primary-gold">
                         {item.price}
                       </p>
                     </div>
