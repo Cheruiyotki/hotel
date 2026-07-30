@@ -67,16 +67,16 @@ export const Navbar = () => {
     <nav 
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-primary-navy shadow-md backdrop-blur'
+          ? 'bg-primary-navy shadow-lg backdrop-blur-md'
     : 'bg-primary-navy'
-      } border-b border-primary-navy/60`}
+      }`}
     >
-      <div className="container-custom flex items-center justify-between h-16 md:h-16">
+      <div className="container-custom flex items-center justify-between h-20 md:h-24">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <div className="flex items-center gap-2">
-            <div className="text-primary-gold text-xl md:text-2xl font-heading font-bold">🔥</div>
-            <span className="hidden sm:inline text-white font-heading text-sm md:text-base font-semibold tracking-wider">
+            <div className="text-primary-gold text-2xl md:text-3xl font-heading font-bold">🔥</div>
+            <span className="hidden sm:inline text-white font-heading text-lg md:text-xl font-bold">
               Golden Gates
             </span>
           </div>
