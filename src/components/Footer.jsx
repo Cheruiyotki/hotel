@@ -118,7 +118,7 @@ export const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a 
-                href="https://maps.google.com/?q=Golden+Gates+Hotel+Nyeri"
+                href="https://www.google.com/maps?q=-0.37096720479673945,36.93122890776402"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-gold transition-colors"

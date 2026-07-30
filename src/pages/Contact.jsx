@@ -267,7 +267,7 @@ export const Contact = () => {
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.6824640960637!2d36.95099231477318!3d-0.4160881994647384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa6bfc2e2e2e2%3A0x1234567890abc!2sGolden%20Gates%20Hotel!5e0!3m2!1sen!2ske!4v1234567890"
+              src="https://www.google.com/maps?q=-0.37096720479673945,36.93122890776402&z=15&output=embed"
             ></iframe>
           </motion.div>
 
@@ -275,7 +275,7 @@ export const Contact = () => {
             <Button
               variant="primary"
               size="lg"
-              onClick={() => window.open('https://maps.google.com/?q=Golden+Gates+Hotel+Nyeri', '_blank')}
+              onClick={() => window.open('https://www.google.com/maps?q=-0.37096720479673945,36.93122890776402', '_blank')}
             >
               GET DIRECTIONS
             </Button>
@@ -342,7 +342,7 @@ export const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              href="https://maps.google.com/?q=Golden+Gates+Hotel+Nyeri"
+              href="https://www.google.com/maps?q=-0.37096720479673945,36.93122890776402"
               target="_blank"
               rel="noopener noreferrer"
               className="card p-8 text-center hover:shadow-xl transition-all cursor-pointer"
