@@ -25,6 +25,7 @@ const sectionIcons = {
   'pasta-desserts': CakeSlice,
   'hot-drinks': Coffee,
   'cold-drinks': GlassWater,
+  'bar-spirits': GlassWater,
 };
 
 export const Dining = () => {

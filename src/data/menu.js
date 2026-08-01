@@ -275,4 +275,38 @@ export const menuSections = [
       },
     ],
   },
+  {
+    id: 'bar-spirits',
+    type: 'drinks',
+    title: 'Bar & Spirits',
+    eyebrow: 'Evening Bar Service',
+    description: 'Cocktails, beers, wines, and spirits for relaxed evenings and social gatherings.',
+    availability: 'Available from 12:00 - late',
+    items: [
+      {
+        name: 'House Cocktail',
+        description: 'A refreshing signature cocktail prepared by our bar team.',
+        price: 'KSh 650',
+        image: 'https://images.unsplash.com/photo-1514361892635-eae31e1bc0ef?w=700&h=500&fit=crop',
+      },
+      {
+        name: 'Local Beer',
+        description: 'Chilled bottle of local beer served cold.',
+        price: 'KSh 300',
+        image: 'https://images.unsplash.com/photo-1558346648-9757f2fa4474?w=700&h=500&fit=crop',
+      },
+      {
+        name: 'Glass of Wine',
+        description: 'Red or white house wine served by the glass.',
+        price: 'KSh 700',
+        image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&h=500&fit=crop',
+      },
+      {
+        name: 'Classic Spirit Serve',
+        description: 'Your choice of spirit served with a mixer and ice.',
+        price: 'KSh 550',
+        image: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=700&h=500&fit=crop',
+      },
+    ],
+  },
 ];
