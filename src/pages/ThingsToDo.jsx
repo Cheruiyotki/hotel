@@ -4,19 +4,12 @@ import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { SectionHeading, ExperienceCard } from '../components';
 import { experiences } from '../data/rooms';
+import { inHotelActivities } from '../data/featureCards';
 
 export const ThingsToDo = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const activities = [
-    { icon: '🏃', title: 'Jogging', desc: 'Scenic jogging trails through our grounds and surrounding areas' },
-    { icon: '🚶', title: 'Guided Nature Walks', desc: 'Expert-led walks through pristine forests and scenic trails' },
-    { icon: '🎮', title: 'Team Games', desc: 'Group activities for team building and fun' },
-    { icon: '♟️', title: 'Board Games', desc: 'Indoor entertainment and strategic games' },
-    { icon: '🏸', title: 'Badminton', desc: 'Friendly sport and recreation' },
-  ];
 
   return (
     <div className="w-full">
@@ -53,7 +46,7 @@ export const ThingsToDo = () => {
               In-Hotel Activities
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              {activities.map((activity, idx) => (
+              {inHotelActivities.map((activity, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}

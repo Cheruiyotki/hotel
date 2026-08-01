@@ -13,6 +13,7 @@ import {
 } from '../components';
 import { SITE } from '../config/site';
 import { rooms, amenities, experiences, testimonials } from '../data/rooms';
+import { homeFeatureCards } from '../data/featureCards';
 import { Star, ArrowRight } from 'lucide-react';
 
 export const Home = () => {
@@ -24,29 +25,6 @@ export const Home = () => {
   const featuredRooms = rooms.slice(0, 3);
   const featuredAmenities = amenities.slice(0, 4);
   const featuredExperiences = experiences.slice(0, 6);
-
-  const whyChooseCards = [
-    {
-      title: 'Comfortable Rooms',
-      description: 'Luxuriously appointed rooms with modern amenities',
-      icon: '🛏️',
-    },
-    {
-      title: 'Beautiful Gardens',
-      description: 'Manicured gardens surrounded by lush forest scenery',
-      icon: '🌿',
-    },
-    {
-      title: 'Swimming Pool',
-      description: 'Olympic-sized pool with complimentary towels and refreshments',
-      icon: '🏊',
-    },
-    {
-      title: 'Conference & Events',
-      description: 'Spacious venues perfect for meetings and special occasions',
-      icon: '🎉',
-    },
-  ];
 
   return (
     <div className="w-full">
@@ -154,7 +132,7 @@ export const Home = () => {
             subtitle="Experience the perfect blend of luxury, nature, and warm Kenyan hospitality"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {whyChooseCards.map((card, idx) => (
+            {homeFeatureCards.map((card, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}

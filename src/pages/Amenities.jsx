@@ -4,6 +4,7 @@ import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { SectionHeading, AmenityCard } from '../components';
 import { amenities } from '../data/rooms';
+import { additionalServices } from '../data/featureCards';
 
 export const Amenities = () => {
   useEffect(() => {
@@ -153,32 +154,7 @@ export const Amenities = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Free Wi-Fi',
-                description: 'High-speed internet access throughout the hotel for seamless connectivity'
-              },
-              {
-                title: 'Manicured Gardens',
-                description: 'Beautiful landscaped gardens surrounded by lush forest scenery'
-              },
-              {
-                title: '24-Hour Guest Service',
-                description: 'Dedicated staff available round-the-clock to assist with any requests'
-              },
-              {
-                title: 'Club House',
-                description: 'Exclusive gathering space for guests to relax and socialize'
-              },
-              {
-                title: 'Room Service',
-                description: 'In-room dining with a selection of local and international cuisine'
-              },
-              {
-                title: 'Conference Facilities',
-                description: 'Modern equipped meeting spaces suitable for business meetings and events'
-              },
-            ].map((service, idx) => (
+            {additionalServices.map((service, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
