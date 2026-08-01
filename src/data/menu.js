@@ -1,3 +1,53 @@
+export const menuTypes = [
+  {
+    id: 'food',
+    label: 'Food Menu',
+    description: 'Breakfast, snacks, mains, and desserts.',
+  },
+  {
+    id: 'drinks',
+    label: 'Drinks Menu',
+    description: 'Hot drinks, cold drinks, and bar service.',
+  },
+];
+
+export const diningHighlights = [
+  {
+    icon: 'Coffee',
+    title: 'Breakfast',
+    description: 'Start your day with local and international breakfast favorites.',
+  },
+  {
+    icon: 'Utensils',
+    title: 'Lunch & Dinner',
+    description: 'Midday and evening dining prepared with fresh local ingredients.',
+  },
+  {
+    icon: 'CakeSlice',
+    title: 'Snacks',
+    description: 'Light bites, desserts, and poolside refreshments throughout the day.',
+  },
+  {
+    icon: 'GlassWater',
+    title: 'Drinks',
+    description: 'Hot drinks, fresh juices, soft drinks, and chilled beverages.',
+  },
+  {
+    icon: 'ChefHat',
+    title: 'Special Occasions',
+    description: 'Customized menus for celebrations, weddings, and meetings.',
+  },
+];
+
+export const diningExperienceCards = [
+  { title: 'Fresh Ingredients', desc: 'Locally sourced produce and carefully prepared dishes.' },
+  { title: 'Hotel Service', desc: 'Friendly service for residents, walk-in guests, and groups.' },
+  { title: 'Custom Menus', desc: 'Personalized options for meetings, weddings, and special occasions.' },
+  { title: 'Warm Ambience', desc: 'Relaxed dining spaces suited to family meals and quiet evenings.' },
+  { title: 'Poolside Refreshments', desc: 'Light snacks, cold beverages, and ice creams by the pool.' },
+  { title: 'Event Catering', desc: 'Food and beverage support for conferences and celebrations.' },
+];
+
 export const menuSections = [
   {
     id: 'breakfast',
@@ -310,3 +360,16 @@ export const menuSections = [
     ],
   },
 ];
+
+export const sectionIcons = {
+  breakfast: 'Coffee',
+  'snacks-eggs': 'CakeSlice',
+  'light-dishes': 'Soup',
+  'grill-local': 'Utensils',
+  'chicken-fish': 'ChefHat',
+  'platters-choma': 'Utensils',
+  'pasta-desserts': 'CakeSlice',
+  'hot-drinks': 'Coffee',
+  'cold-drinks': 'GlassWater',
+  'bar-spirits': 'GlassWater',
+};

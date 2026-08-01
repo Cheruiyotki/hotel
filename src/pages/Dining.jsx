@@ -1,6 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Seo } from '../components';
-import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
@@ -12,20 +10,23 @@ import {
   Soup,
   Utensils,
 } from 'lucide-react';
-import { SectionHeading, Button } from '../components';
-import { menuSections } from '../data/menu';
+import { Seo, SectionHeading, Button } from '../components';
+import { SITE } from '../config/site';
+import {
+  diningHighlights,
+  diningExperienceCards,
+  menuSections,
+  menuTypes,
+  sectionIcons,
+} from '../data/menu';
 
-const sectionIcons = {
-  breakfast: Coffee,
-  'snacks-eggs': CakeSlice,
-  'light-dishes': Soup,
-  'grill-local': Utensils,
-  'chicken-fish': ChefHat,
-  'platters-choma': Utensils,
-  'pasta-desserts': CakeSlice,
-  'hot-drinks': Coffee,
-  'cold-drinks': GlassWater,
-  'bar-spirits': GlassWater,
+const iconComponents = {
+  Coffee,
+  Utensils,
+  CakeSlice,
+  GlassWater,
+  ChefHat,
+  Soup,
 };
 
 export const Dining = () => {
@@ -61,34 +62,6 @@ export const Dining = () => {
     setActiveCategory(nextSections[0]?.id || '');
   };
 
-  const diningOptions = [
-    {
-      Icon: Coffee,
-      title: 'Breakfast',
-      description: 'Start your day with local and international breakfast favorites.',
-    },
-    {
-      Icon: Utensils,
-      title: 'Lunch & Dinner',
-      description: 'Midday and evening dining prepared with fresh local ingredients.',
-    },
-    {
-      Icon: CakeSlice,
-      title: 'Snacks',
-      description: 'Light bites, desserts, and poolside refreshments throughout the day.',
-    },
-    {
-      Icon: GlassWater,
-      title: 'Drinks',
-      description: 'Hot drinks, fresh juices, soft drinks, and chilled beverages.',
-    },
-    {
-      Icon: ChefHat,
-      title: 'Special Occasions',
-      description: 'Customized menus for celebrations, weddings, and meetings.',
-    },
-  ];
-
   return (
     <div className="w-full">
       <Seo
@@ -96,6 +69,7 @@ export const Dining = () => {
         description={`Savor authentic Kenyan and international cuisine at ${SITE.name}. View our hotel menu for breakfast, main meals, light bites, desserts, and drinks.`}
         url={`${SITE.url}/dining`}
       />
+
       <section className="section bg-primary-light border-b border-white/60">
         <div className="container-custom text-center max-w-4xl">
           <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
@@ -170,26 +144,29 @@ export const Dining = () => {
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {diningOptions.map(({ Icon, title, description }, idx) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.08 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all"
-              >
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary-gold/10 text-primary-gold">
-                  <Icon size={28} aria-hidden="true" />
-                </div>
-                <h3 className="text-xl font-heading font-bold text-primary-navy mb-3">
-                  {title}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {description}
-                </p>
-              </motion.div>
-            ))}
+            {diningHighlights.map(({ icon, title, description }, idx) => {
+              const Icon = iconComponents[icon] || Utensils;
+              return (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.08 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-lg p-6 text-center shadow-lg hover:shadow-xl transition-all"
+                >
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary-gold/10 text-primary-gold">
+                    <Icon size={28} aria-hidden="true" />
+                  </div>
+                  <h3 className="text-xl font-heading font-bold text-primary-navy mb-3">
+                    {title}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -199,35 +176,35 @@ export const Dining = () => {
           <SectionHeading
             label="Restaurant Menu"
             title="Golden Gates Hotel Menu"
-            subtitle="A hotel-style dining menu with prices for breakfast, main meals, light bites, desserts, and drinks."
+            subtitle="A hotel-style dining menu with prices for breakfast, main meals, light bites, desserts, drinks, and bar service."
           />
 
           <div className="-mx-4 mb-14 rounded-[2rem] border border-primary-gold/20 bg-primary-navy px-4 py-6 shadow-2xl md:-mx-8 md:px-8">
             <div className="mx-auto mb-5 flex w-fit rounded-full border border-white/10 bg-white/10 p-1 backdrop-blur-sm">
-              {[
-                { id: 'food', label: 'Food Menu', Icon: Utensils },
-                { id: 'drinks', label: 'Drinks Menu', Icon: GlassWater },
-              ].map(({ id, label, Icon }) => (
-                <button
-                  key={id}
-                  type="button"
-                  onClick={() => handleMenuTypeChange(id)}
-                  className={`flex min-w-[150px] items-center justify-center gap-2 rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] transition-all ${
-                    activeMenuType === id
-                      ? 'bg-primary-gold text-white shadow-lg'
-                      : 'text-white/70 hover:bg-white/10 hover:text-white'
-                  }`}
-                  aria-pressed={activeMenuType === id}
-                >
-                  <Icon size={15} aria-hidden="true" />
-                  {label}
-                </button>
-              ))}
+              {menuTypes.map(({ id, label }) => {
+                const Icon = id === 'food' ? Utensils : GlassWater;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => handleMenuTypeChange(id)}
+                    className={`flex min-w-[150px] items-center justify-center gap-2 rounded-full px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] transition-all ${
+                      activeMenuType === id
+                        ? 'bg-primary-gold text-white shadow-lg'
+                        : 'text-white/70 hover:bg-white/10 hover:text-white'
+                    }`}
+                    aria-pressed={activeMenuType === id}
+                  >
+                    <Icon size={15} aria-hidden="true" />
+                    {label}
+                  </button>
+                );
+              })}
             </div>
 
             <div className="flex gap-3 overflow-x-auto border-t border-white/10 pt-4">
               {activeSections.map((section) => {
-                const Icon = sectionIcons[section.id] || Utensils;
+                const Icon = iconComponents[sectionIcons[section.id]] || Utensils;
                 const isActive = selectedSection?.id === section.id;
 
                 return (
@@ -318,14 +295,7 @@ export const Dining = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: 'Fresh Ingredients', desc: 'Locally sourced produce and carefully prepared dishes.' },
-              { title: 'Hotel Service', desc: 'Friendly service for residents, walk-in guests, and groups.' },
-              { title: 'Custom Menus', desc: 'Personalized options for meetings, weddings, and special occasions.' },
-              { title: 'Warm Ambience', desc: 'Relaxed dining spaces suited to family meals and quiet evenings.' },
-              { title: 'Poolside Refreshments', desc: 'Light snacks, cold beverages, and ice creams by the pool.' },
-              { title: 'Event Catering', desc: 'Food and beverage support for conferences and celebrations.' },
-            ].map((item, idx) => (
+            {diningExperienceCards.map((item, idx) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 20 }}
