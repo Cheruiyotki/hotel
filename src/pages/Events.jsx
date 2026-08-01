@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Seo } from '../components';
 import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, Button } from '../components';
+import { SectionHeading, Button } from '../components';
 import { useNavigate } from 'react-router-dom';
 
 export const Events = () => {
@@ -19,12 +19,19 @@ export const Events = () => {
         description={`Host your meetings, conferences, and special events at ${SITE.name}. Flexible event spaces, catering, and professional planning services available.`}
         url={`${SITE.url}/events`}
       />
-      {/* Hero */}
-      <Hero
-        title="Meetings, Events & Special Days"
-        subtitle="Create unforgettable moments with our premium event spaces and expert services"
-        backgroundImage="https://images.unsplash.com/photo-1519671482677-de7152932a92?w=1600&h=900&fit=crop"
-      />
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom text-center max-w-4xl">
+          <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+            Meetings & Events
+          </p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+            Meetings, Events & Special Days
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            Create unforgettable moments with our premium event spaces and expert services.
+          </p>
+        </div>
+      </section>
 
       {/* Meetings & Events */}
       <section className="section bg-white">

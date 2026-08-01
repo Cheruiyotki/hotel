@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Seo } from '../components';
 import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, Button } from '../components';
+import { SectionHeading, Button } from '../components';
 import { Check, AlertCircle } from 'lucide-react';
 
 export const Reservations = () => {
@@ -80,12 +80,19 @@ export const Reservations = () => {
         description={`Request a reservation or inquiry at ${SITE.name}. Share your dates and preferences and we'll reply within 24 hours.`}
         url={`${SITE.url}/reservations`}
       />
-      {/* Hero */}
-      <Hero
-        title="Plan Your Perfect Stay"
-        subtitle="Request your reservation and let us create an unforgettable experience"
-        backgroundImage="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop"
-      />
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom text-center max-w-4xl">
+          <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+            Reservations
+          </p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+            Plan Your Perfect Stay
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            Request your reservation and let us create an unforgettable experience.
+          </p>
+        </div>
+      </section>
 
       {/* Form Section */}
       <section className="section bg-white">

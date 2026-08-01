@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Seo } from '../components';
 import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, Button } from '../components';
+import { SectionHeading, Button } from '../components';
 import { useNavigate } from 'react-router-dom';
 import { Check } from 'lucide-react';
 
@@ -65,12 +65,19 @@ export const Conferences = () => {
         description={`Professional conference and meeting spaces at ${SITE.name}. Modern AV, catering, and flexible room layouts for seminars, trainings and corporate events.`}
         url={`${SITE.url}/conferences`}
       />
-      {/* Hero */}
-      <Hero
-        title="Conference Facilities Designed for Productive Gatherings"
-        subtitle="Modern equipped spaces perfect for business meetings, conferences, and seminars"
-        backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop"
-      />
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom text-center max-w-4xl">
+          <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+            Conferences
+          </p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+            Conference Facilities Designed for Productive Gatherings
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            Modern equipped spaces perfect for business meetings, conferences, and seminars.
+          </p>
+        </div>
+      </section>
 
       {/* Conference Overview */}
       <section className="section bg-white">

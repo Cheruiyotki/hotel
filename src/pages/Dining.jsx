@@ -12,7 +12,7 @@ import {
   Soup,
   Utensils,
 } from 'lucide-react';
-import { Hero, SectionHeading, Button } from '../components';
+import { SectionHeading, Button } from '../components';
 import { menuSections } from '../data/menu';
 
 const sectionIcons = {
@@ -95,11 +95,19 @@ export const Dining = () => {
         description={`Savor authentic Kenyan and international cuisine at ${SITE.name}. View our hotel menu for breakfast, main meals, light bites, desserts, and drinks.`}
         url={`${SITE.url}/dining`}
       />
-      <Hero
-        title="Savor Every Moment"
-        subtitle="Walk in & savor serenity, delightful delicacies, & comfort"
-        backgroundImage="https://images.unsplash.com/photo-1504674900566-f4ff815c5c64?w=1600&h=900&fit=crop"
-      />
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom text-center max-w-4xl">
+          <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+            Dining & Menu
+          </p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+            Savor Every Moment
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            Walk in & savor serenity, delightful delicacies, & comfort.
+          </p>
+        </div>
+      </section>
 
       <section className="section bg-white">
         <div className="container-custom">

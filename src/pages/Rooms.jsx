@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, RoomCard, Seo } from '../components';
+import { SectionHeading, RoomCard, Seo } from '../components';
 import { SITE } from '../config/site';
 import { rooms } from '../data/rooms';
 
@@ -24,12 +24,19 @@ export const Rooms = () => {
         image={`https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1600&h=900&fit=crop`}
         url={`${SITE.url}/rooms`}
       />
-      {/* Hero */}
-      <Hero
-        title="Rooms Designed for Rest & Comfort"
-        subtitle="Choose from our collection of luxuriously appointed rooms, each offering unique comfort and style"
-        backgroundImage="https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1600&h=900&fit=crop"
-      />
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom text-center">
+          <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+            Rooms & Suites
+          </p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+            Rooms Designed for Rest & Comfort
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            Choose from our collection of luxuriously appointed rooms, each offering unique comfort and style.
+          </p>
+        </div>
+      </section>
 
       {/* All Rooms */}
       <section className="section bg-white">

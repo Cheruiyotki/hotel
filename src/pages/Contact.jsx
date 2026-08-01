@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, Button, Seo } from '../components';
+import { SectionHeading, Button, Seo } from '../components';
 import { SITE } from '../config/site';
 import { MapPin, Mail, Phone, Clock, AlertCircle } from 'lucide-react';
 
@@ -68,12 +68,19 @@ export const Contact = () => {
         description={`Get in touch with ${SITE.name} reservations and guest services. Call, email, or use our contact form for bookings, group requests, and inquiries.`}
         url={`${SITE.url}/contact`}
       />
-      {/* Hero */}
-      <Hero
-        title="Let's Plan Your Stay"
-        subtitle="We're here to help with any questions or special requests"
-        backgroundImage="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop"
-      />
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom text-center max-w-4xl">
+          <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+            Contact
+          </p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+            Let's Plan Your Stay
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            We're here to help with any questions or special requests.
+          </p>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section className="section bg-white">

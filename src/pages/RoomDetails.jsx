@@ -46,50 +46,39 @@ export const RoomDetails = () => {
           "occupancy": room.occupancy
         }}
       />
-      {/* Back Button - full width small button */}
-      <div className="w-full bg-white">
-        <div className="container-custom py-3">
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom">
           <button
             onClick={() => navigate('/rooms')}
-            className="inline-flex items-center gap-2 text-primary-navy hover:text-primary-gold transition-colors text-sm px-3 py-2 bg-white border border-gray-200 rounded-lg shadow-sm"
+            className="inline-flex items-center gap-2 text-primary-navy hover:text-primary-gold transition-colors text-sm px-3 py-2 bg-white border border-gray-200 rounded-lg shadow-sm mb-8"
           >
             <ChevronLeft size={16} />
             <span>Back to Rooms</span>
           </button>
-        </div>
-      </div>
 
-      {/* Image Gallery Hero */}
-      <div className="relative w-full bg-gray-200">
-        <div className="container-custom">
-          <div className="relative w-full h-96 md:h-[500px] overflow-hidden rounded-b-2xl">
-            <img
-              src={room.image}
-              alt={room.name}
-              className="w-full h-full object-cover"
-            />
-            {/* Horizontal scrollable thumbnails */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-10 w-full max-w-4xl">
-              <div className="overflow-x-auto no-scrollbar px-4 py-2">
-                <div className="flex gap-4">
-                  {room.images && room.images.map((src, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => {
-                        const mainImg = document.querySelector('.room-main-img');
-                        if (mainImg) mainImg.src = src;
-                      }}
-                      className="flex-shrink-0 w-40 h-28 rounded-xl overflow-hidden border border-white shadow-md"
-                    >
-                      <img src={src} alt={`${room.name} ${idx+1}`} className="w-full h-full object-cover" />
-                    </button>
-                  ))}
+          <div className="max-w-4xl">
+            <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+              Room Details
+            </p>
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+              {room.name}
+            </h1>
+            <p className="text-lg md:text-xl text-gray-700 max-w-3xl">
+              {room.bedType} · {room.description}
+            </p>
+          </div>
+
+          <div className="mt-10 overflow-x-auto pb-2">
+            <div className="flex gap-4 min-w-max">
+              {room.images?.map((src, idx) => (
+                <div key={idx} className="w-72 md:w-80 flex-shrink-0 overflow-hidden rounded-2xl shadow-lg bg-white">
+                  <img src={src} alt={`${room.name} view ${idx + 1}`} className="w-full h-56 object-cover" />
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Room Details */}
       <section className="section bg-white">
@@ -103,17 +92,6 @@ export const RoomDetails = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-5xl font-heading font-bold text-primary-navy mb-3">
-                  {room.name}
-                </h1>
-                <p className="text-primary-gold text-lg font-semibold mb-6">
-                  {room.bedType}
-                </p>
-
-                <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                  {room.description}
-                </p>
-
                 {/* Room Features */}
                 <div className="mb-12">
                   <h3 className="text-2xl font-heading font-bold text-primary-navy mb-6">

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Seo } from '../components';
 import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, ExperienceCard } from '../components';
+import { SectionHeading, ExperienceCard } from '../components';
 import { experiences } from '../data/rooms';
 
 export const ThingsToDo = () => {
@@ -25,12 +25,19 @@ export const ThingsToDo = () => {
         description={`Explore activities and local attractions near ${SITE.name}: Aberdare National Park, guided nature walks, picnicking, waterfalls, and cultural sites.`}
         url={`${SITE.url}/things-to-do`}
       />
-      {/* Hero */}
-      <Hero
-        title="Things To Do"
-        subtitle="Explore the natural wonders and cultural attractions around Nyeri"
-        backgroundImage="https://images.unsplash.com/photo-1516426122078-8023e76319a7?w=1600&h=900&fit=crop"
-      />
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom text-center max-w-4xl">
+          <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+            Experiences
+          </p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+            Things To Do
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            Explore the natural wonders and cultural attractions around Nyeri.
+          </p>
+        </div>
+      </section>
 
       {/* Introduction */}
       <section className="section bg-white">

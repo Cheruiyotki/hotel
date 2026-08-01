@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Seo } from '../components';
 import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
-import { Hero, SectionHeading, AmenityCard } from '../components';
+import { SectionHeading, AmenityCard } from '../components';
 import { amenities } from '../data/rooms';
 
 export const Amenities = () => {
@@ -17,12 +17,19 @@ export const Amenities = () => {
         description={`Discover facilities at ${SITE.name}: swimming pool, gym, business centre, free Wi-Fi, conference facilities and more to make your stay comfortable.`}
         url={`${SITE.url}/amenities`}
       />
-      {/* Hero */}
-      <Hero
-        title="Services & Amenities"
-        subtitle="Discover our comprehensive facilities designed for your comfort and convenience"
-        backgroundImage="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&h=900&fit=crop"
-      />
+      <section className="section bg-primary-light border-b border-white/60">
+        <div className="container-custom text-center max-w-4xl">
+          <p className="text-primary-gold text-sm font-semibold uppercase tracking-[0.35em] mb-4">
+            Amenities
+          </p>
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-primary-navy mb-4">
+            Services & Amenities
+          </h1>
+          <p className="text-lg md:text-xl text-gray-700">
+            Discover our comprehensive facilities designed for your comfort and convenience.
+          </p>
+        </div>
+      </section>
 
       {/* All Amenities */}
       <section className="section bg-white">
