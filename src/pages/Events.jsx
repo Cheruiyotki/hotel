@@ -43,6 +43,7 @@ export const Events = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="w-full max-w-full min-w-0"
             >
               <p className="text-primary-gold text-sm font-semibold uppercase tracking-widest mb-3">
                 Professional Meetings
@@ -72,7 +73,7 @@ export const Events = () => {
               viewport={{ once: true }}
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=700&fit=crop"
               alt="Conference Room"
-              className="rounded-2xl shadow-2xl"
+              className="w-full max-w-full rounded-2xl shadow-2xl"
             />
           </div>
 
@@ -86,7 +87,7 @@ export const Events = () => {
               viewport={{ once: true }}
               src="https://images.unsplash.com/photo-1519671482677-de7152932a92?w=600&h=700&fit=crop"
               alt="Wedding"
-              className="rounded-2xl shadow-2xl order-2 md:order-1"
+              className="w-full max-w-full rounded-2xl shadow-2xl order-2 md:order-1"
             />
 
             <motion.div
@@ -94,7 +95,7 @@ export const Events = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="order-1 md:order-2"
+              className="order-1 md:order-2 w-full max-w-full min-w-0"
             >
               <p className="text-primary-gold text-sm font-semibold uppercase tracking-widest mb-3">
                 Celebrations

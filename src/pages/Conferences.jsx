@@ -93,6 +93,7 @@ export const Conferences = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="w-full max-w-full min-w-0"
             >
               <h3 className="text-3xl font-heading font-bold text-primary-navy mb-6">
                 What We Offer
@@ -114,7 +115,7 @@ export const Conferences = () => {
               viewport={{ once: true }}
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=700&fit=crop"
               alt="Conference Room"
-              className="rounded-2xl shadow-2xl"
+              className="w-full max-w-full rounded-2xl shadow-2xl"
             />
           </div>
         </div>
@@ -134,7 +135,7 @@ export const Conferences = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="card p-8 md:p-12 mb-8 border-2 border-primary-gold"
+              className="card w-full max-w-full p-8 md:p-12 mb-8 border-2 border-primary-gold"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>

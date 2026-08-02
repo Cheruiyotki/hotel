@@ -10,6 +10,22 @@
   body {
     @apply font-body bg-primary-light;
     color: #12213A;
+    overflow-x: hidden;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  img,
+  iframe,
+  video {
+    max-width: 100%;
+  }
+
+  main .grid > *,
+  main .flex > * {
+    min-width: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {

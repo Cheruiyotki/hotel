@@ -59,7 +59,7 @@ export const RoomCard = ({ room }) => {
               Explore
             </Button>
           </Link>
-          <Link to="/reservations" className="flex-1">
+          <Link to={`/reservations?roomId=${encodeURIComponent(room.id)}&roomName=${encodeURIComponent(room.name)}&roomCategory=${encodeURIComponent(room.category)}&roomBedType=${encodeURIComponent(room.bedType)}`} className="flex-1">
             <Button variant="primary" size="sm" className="w-full">
               Book
             </Button>

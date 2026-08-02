@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Hero,
-  BookingWidget,
   SectionHeading,
   Button,
   RoomCard,
@@ -43,12 +42,7 @@ export const Home = () => {
           {
             label: 'BOOK YOUR STAY',
             variant: 'secondary',
-            onClick: () => {
-              const bookingSection = document.getElementById('booking');
-              if (bookingSection) {
-                bookingSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }
+            onClick: () => navigate('/reservations')
           },
           {
             label: 'VIEW MENU',
@@ -63,11 +57,6 @@ export const Home = () => {
         ]}
       />
 
-      {/* Booking Widget */}
-      <section id="booking" className="relative -mt-16 md:-mt-20 z-20 container-custom">
-        <BookingWidget />
-      </section>
-
       {/* Welcome Section */}
       <section className="section bg-white">
         <div className="container-custom">
@@ -79,7 +68,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="order-2 md:order-1"
+              className="order-2 md:order-1 w-full max-w-full min-w-0"
             >
               <img
                 src="https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=600&h=700&fit=crop"
@@ -94,7 +83,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="order-1 md:order-2"
+              className="order-1 md:order-2 w-full max-w-full min-w-0"
             >
               <p className="text-primary-gold text-sm font-semibold uppercase tracking-widest mb-3">
                 Welcome to Golden Gates
@@ -214,6 +203,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="w-full max-w-full min-w-0"
             >
               <p className="text-primary-gold text-sm font-semibold uppercase tracking-widest mb-3">
                 Culinary
@@ -242,6 +232,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="w-full max-w-full min-w-0"
             >
               <img
                 src="https://images.unsplash.com/photo-1504674900566-f4ff815c5c64?w=600&h=700&fit=crop"
@@ -264,7 +255,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="order-2 md:order-1"
+              className="order-2 md:order-1 w-full max-w-full min-w-0"
             >
               <img
                 src="https://images.unsplash.com/photo-1519671482677-de7152932a92?w=600&h=700&fit=crop"
@@ -279,7 +270,7 @@ export const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="order-1 md:order-2"
+              className="order-1 md:order-2 w-full max-w-full min-w-0"
             >
               <p className="text-primary-gold text-sm font-semibold uppercase tracking-widest mb-3">
                 Celebrations

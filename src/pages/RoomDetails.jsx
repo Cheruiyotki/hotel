@@ -68,7 +68,7 @@ export const RoomDetails = () => {
             </p>
           </div>
 
-          <div className="mt-10 overflow-x-auto pb-2">
+          <div className="mt-10 w-full max-w-full overflow-x-auto pb-2">
             <div className="flex gap-4 min-w-max">
               {room.images?.map((src, idx) => (
                 <div key={idx} className="w-72 md:w-80 flex-shrink-0 overflow-hidden rounded-2xl shadow-lg bg-white">

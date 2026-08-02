@@ -93,6 +93,7 @@ export const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="w-full max-w-full min-w-0"
             >
               <h2 className="text-4xl font-heading font-bold text-primary-navy mb-8">
                 Send us a Message
@@ -193,7 +194,7 @@ export const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-8 w-full max-w-full min-w-0"
             >
               <div>
                 <h3 className="text-4xl font-heading font-bold text-primary-navy mb-8">
@@ -202,7 +203,7 @@ export const Contact = () => {
               </div>
 
               {/* Address */}
-              <div className="card p-6 flex gap-4">
+              <div className="card w-full max-w-full p-6 flex gap-4">
                 <MapPin className="text-primary-gold flex-shrink-0" size={28} />
                 <div>
                   <h4 className="text-lg font-bold text-primary-navy mb-2">Address</h4>
@@ -214,7 +215,7 @@ export const Contact = () => {
               </div>
 
               {/* Email */}
-              <div className="card p-6 flex gap-4">
+              <div className="card w-full max-w-full p-6 flex gap-4">
                 <Mail className="text-primary-gold flex-shrink-0" size={28} />
                 <div>
                   <h4 className="text-lg font-bold text-primary-navy mb-2">Email</h4>
@@ -228,7 +229,7 @@ export const Contact = () => {
               </div>
 
               {/* Phone */}
-              <div className="card p-6 flex gap-4">
+              <div className="card w-full max-w-full p-6 flex gap-4">
                 <Phone className="text-primary-gold flex-shrink-0" size={28} />
                 <div>
                   <h4 className="text-lg font-bold text-primary-navy mb-2">Phone</h4>
@@ -242,7 +243,7 @@ export const Contact = () => {
               </div>
 
               {/* Website */}
-              <div className="card p-6 flex gap-4">
+              <div className="card w-full max-w-full p-6 flex gap-4">
                 <Clock className="text-primary-gold flex-shrink-0" size={28} />
                 <div>
                   <h4 className="text-lg font-bold text-primary-navy mb-2">Website</h4>

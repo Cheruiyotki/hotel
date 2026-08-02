@@ -2,13 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { Seo } from '../components';
 import { SITE } from '../config/site';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { SectionHeading, Button } from '../components';
 import { Check, AlertCircle } from 'lucide-react';
 
 export const Reservations = () => {
+  const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const roomParams = new URLSearchParams(location.search);
+  const selectedRoom = {
+    id: roomParams.get('roomId') || '',
+    name: roomParams.get('roomName') || '',
+    category: roomParams.get('roomCategory') || '',
+    bedType: roomParams.get('roomBedType') || '',
+  };
 
   const [formData, setFormData] = useState({
     checkIn: '',
@@ -21,6 +31,16 @@ export const Reservations = () => {
     phone: '',
     specialRequests: '',
   });
+
+  useEffect(() => {
+    if (selectedRoom.name) {
+      setFormData((prev) => ({
+        ...prev,
+        roomCategory: selectedRoom.category || prev.roomCategory,
+        specialRequests: prev.specialRequests || `Booking request for ${selectedRoom.name}${selectedRoom.bedType ? ` (${selectedRoom.bedType})` : ''}`,
+      }));
+    }
+  }, [selectedRoom.name, selectedRoom.category, selectedRoom.bedType]);
 
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
@@ -97,6 +117,20 @@ export const Reservations = () => {
       {/* Form Section */}
       <section className="section bg-white">
         <div className="container-custom max-w-4xl">
+          {selectedRoom.name && (
+            <div className="mb-8 rounded-2xl border border-primary-gold/20 bg-primary-light p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary-gold mb-2">
+                Selected Room
+              </p>
+              <h3 className="text-2xl font-heading font-bold text-primary-navy mb-1">
+                {selectedRoom.name}
+              </h3>
+              <p className="text-sm text-gray-700">
+                {selectedRoom.bedType || 'Room category'}
+              </p>
+            </div>
+          )}
+
           <SectionHeading
             title="Reservation Request"
             subtitle="Fill in your details and we'll confirm your booking"
