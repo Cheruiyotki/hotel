@@ -4,6 +4,8 @@ import { Button } from './Button';
 import { Wifi, Tv, Wind } from 'lucide-react';
 
 export const RoomCard = ({ room }) => {
+  const reservationHref = `/reservations?roomType=${encodeURIComponent(room.id)}&roomId=${encodeURIComponent(room.id)}&roomName=${encodeURIComponent(room.name)}&roomCategory=${encodeURIComponent(room.category)}&roomBedType=${encodeURIComponent(room.bedType)}`;
+
   return (
     <div className="card card-hover overflow-hidden h-full flex flex-col">
       {/* Image */}
@@ -59,7 +61,7 @@ export const RoomCard = ({ room }) => {
               Explore
             </Button>
           </Link>
-          <Link to={`/reservations?roomId=${encodeURIComponent(room.id)}&roomName=${encodeURIComponent(room.name)}&roomCategory=${encodeURIComponent(room.category)}&roomBedType=${encodeURIComponent(room.bedType)}`} className="flex-1">
+          <Link to={reservationHref} className="flex-1">
             <Button variant="primary" size="sm" className="w-full">
               Book
             </Button>

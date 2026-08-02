@@ -15,9 +15,26 @@ export const Reservations = () => {
   const roomParams = new URLSearchParams(location.search);
   const selectedRoom = {
     id: roomParams.get('roomId') || '',
+    type: roomParams.get('roomType') || '',
     name: roomParams.get('roomName') || '',
     category: roomParams.get('roomCategory') || '',
     bedType: roomParams.get('roomBedType') || '',
+  };
+
+  const normalizeRoomCategory = (roomType, roomCategory) => {
+    const allowedRoomTypes = new Set(['standard', 'deluxe', 'superior', 'suite', 'premier', 'family', 'twin']);
+    if (allowedRoomTypes.has(roomType)) {
+      return roomType;
+    }
+
+    const legacyCategoryMap = {
+      premium: 'premier',
+      superior: 'superior',
+      standard: 'standard',
+      family: 'family',
+    };
+
+    return legacyCategoryMap[roomCategory] || 'standard';
   };
 
   const [formData, setFormData] = useState({
@@ -36,11 +53,11 @@ export const Reservations = () => {
     if (selectedRoom.name) {
       setFormData((prev) => ({
         ...prev,
-        roomCategory: selectedRoom.category || prev.roomCategory,
+        roomCategory: normalizeRoomCategory(selectedRoom.type, selectedRoom.category) || prev.roomCategory,
         specialRequests: prev.specialRequests || `Booking request for ${selectedRoom.name}${selectedRoom.bedType ? ` (${selectedRoom.bedType})` : ''}`,
       }));
     }
-  }, [selectedRoom.name, selectedRoom.category, selectedRoom.bedType]);
+  }, [selectedRoom.name, selectedRoom.type, selectedRoom.category, selectedRoom.bedType]);
 
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({});

@@ -27,6 +27,7 @@ export const RoomDetails = () => {
   }
 
   const relatedRooms = rooms.filter(r => r.category === room.category && r.id !== room.id).slice(0, 3);
+  const reservationHref = `/reservations?roomType=${encodeURIComponent(room.id)}&roomId=${encodeURIComponent(room.id)}&roomName=${encodeURIComponent(room.name)}&roomCategory=${encodeURIComponent(room.category)}&roomBedType=${encodeURIComponent(room.bedType)}`;
 
   return (
     <div className="w-full">
@@ -172,7 +173,7 @@ export const RoomDetails = () => {
                   variant="primary"
                   size="lg"
                   className="w-full mb-4"
-                  onClick={() => window.location.href = '/reservations'}
+                  onClick={() => window.location.href = reservationHref}
                 >
                   BOOK THIS ROOM
                 </Button>
