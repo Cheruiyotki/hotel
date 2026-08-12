@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './Button';
+import logo from '../assets/logo.png';  
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +76,8 @@ export const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <div className="flex items-center gap-2">
-            <div className="text-primary-gold text-2xl md:text-3xl font-heading font-bold">🔥</div>
+            <div className="text-primary-gold text-2xl md:text-3xl font-heading font-bold"><img src={logo} alt="Golden Gates Logo" 
+    className="h-8 w-auto md:h-10 object-contain" /></div>
             <span className="hidden sm:inline text-white font-heading text-lg md:text-xl font-bold">
               Golden Gates
             </span>

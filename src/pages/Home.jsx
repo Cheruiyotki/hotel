@@ -15,6 +15,9 @@ import { rooms, amenities, experiences, testimonials } from '../data/rooms';
 import { homeFeatureCards } from '../data/featureCards';
 import { Star, ArrowRight } from 'lucide-react';
 
+//images
+import interior from '../assets/interior.avif';
+
 export const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -71,7 +74,7 @@ export const Home = () => {
               className="order-2 md:order-1 w-full max-w-full min-w-0"
             >
               <img
-                src="https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=600&h=700&fit=crop"
+                src= {interior}
                 alt="Golden Gates Hotel Interior"
                 className="w-full rounded-2xl shadow-2xl"
               />

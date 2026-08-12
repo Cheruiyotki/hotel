@@ -2,10 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './Button';
 
+// images
+import backgroundImage from '../assets/home.jpg';
+import interior from '../assets/interior.avif';
+
 export const Hero = ({ 
   title,
   subtitle,
-  backgroundImage,
+   
   ctaButtons = [],
   overlay = true
 }) => {
