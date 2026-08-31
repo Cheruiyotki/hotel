@@ -1,5 +1,6 @@
 import premierRoom from '../assets/premeirRoom.jpg';
 import interior from '../assets/interior.avif';
+import suite from '../assets/suite.jpg';
 
 export const rooms = [
   {
@@ -24,7 +25,7 @@ export const rooms = [
     occupancy: 2,
     bedType: 'King Bed + Living Area',
     amenities: ['Living Room', 'Free Wi-Fi', 'Kitchenette', 'Premium Toiletries', 'Work Area', 'Air Conditioning'],
-    image:  interior,
+    image:  suite,
     images: [
       'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1505691723518-36a79b2f9b42?w=1200&h=800&fit=crop',
