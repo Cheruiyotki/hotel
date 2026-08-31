@@ -17,6 +17,8 @@ import { Star, ArrowRight } from 'lucide-react';
 
 //images
 import interior from '../assets/interior.avif';
+import dine from '../assets/dine.jpg';
+import meeting from '../assets/meeting.jpg';
 
 export const Home = () => {
   useEffect(() => {
@@ -238,7 +240,7 @@ export const Home = () => {
               className="w-full max-w-full min-w-0"
             >
               <img
-                src="https://images.unsplash.com/photo-1504674900566-f4ff815c5c64?w=600&h=700&fit=crop"
+                src= {dine}
                 alt="Dining Experience"
                 className="w-full rounded-2xl shadow-2xl"
               />
@@ -261,7 +263,7 @@ export const Home = () => {
               className="order-2 md:order-1 w-full max-w-full min-w-0"
             >
               <img
-                src="https://images.unsplash.com/photo-1519671482677-de7152932a92?w=600&h=700&fit=crop"
+                src= {meeting}
                 alt="Events & Meetings"
                 className="w-full rounded-2xl shadow-2xl"
               />

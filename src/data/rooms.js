@@ -1,5 +1,5 @@
 import premierRoom from '../assets/premeirRoom.jpg';
-import interior from '../assets/interior.avif';
+import  superior from '../assets/interior.avif';
 import suite from '../assets/suite.jpg';
 
 export const rooms = [
@@ -40,7 +40,7 @@ export const rooms = [
     occupancy: 2,
     bedType: 'Queen Bed',
     amenities: ['Free Wi-Fi', 'Modern Bathroom', 'Air Conditioning', 'Flat-screen TV', 'Work Desk', 'Minibar'],
-    image: 'https://images.unsplash.com/photo-1540932239986-310128078ceb?w=1200&h=800&fit=crop',
+    image:  superior,
     images: [
       'https://images.unsplash.com/photo-1540932239986-310128078ceb?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&h=800&fit=crop',

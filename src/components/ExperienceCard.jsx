@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 
+//images 
+import aberdarePark from '../assets/aberdarePark.jpg';
+
 export const ExperienceCard = ({ experience, index = 0 }) => {
   return (
     <motion.div
