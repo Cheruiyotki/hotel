@@ -1,3 +1,6 @@
+import premierRoom from '../assets/premeirRoom.jpg';
+import interior from '../assets/interior.avif';
+
 export const rooms = [
   {
     id: 'premier',
@@ -6,7 +9,7 @@ export const rooms = [
     occupancy: 2,
     bedType: 'King Bed',
     amenities: ['Free Wi-Fi', 'En-suite Bathroom', 'Air Conditioning', 'Satellite TV', 'Work Desk', 'Premium Bedding'],
-    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+    image:  premierRoom,
     images: [
       'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop',
@@ -21,7 +24,7 @@ export const rooms = [
     occupancy: 2,
     bedType: 'King Bed + Living Area',
     amenities: ['Living Room', 'Free Wi-Fi', 'Kitchenette', 'Premium Toiletries', 'Work Area', 'Air Conditioning'],
-    image: 'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
+    image:  interior,
     images: [
       'https://images.unsplash.com/photo-1631049307038-da0ec9d70304?w=1200&h=800&fit=crop',
       'https://images.unsplash.com/photo-1505691723518-36a79b2f9b42?w=1200&h=800&fit=crop',
