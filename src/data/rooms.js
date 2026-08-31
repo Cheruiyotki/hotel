@@ -1,6 +1,14 @@
 import premierRoom from '../assets/premeirRoom.jpg';
 import  superior from '../assets/interior.avif';
 import suite from '../assets/suite.jpg';
+import natureWalks from '../assets/nature-walk.jpeg';
+import aberdarePark from '../assets/aberdarePark.jpg';
+import picnic from '../assets/picnic.png';
+import bushdinner from '../assets/bush-dinner.jpeg';
+import sweetwaters from '../assets/bush-waters.jpg';
+import thompsonFalls from '../assets/thomsons-falls.webp';
+
+
 
 export const rooms = [
   {
@@ -182,37 +190,37 @@ export const experiences = [
     id: 'aberdare-park',
     name: 'Aberdare National Park',
     description: 'Explore one of Kenya\'s most scenic national parks, home to diverse wildlife and breathtaking mountain scenery.',
-    image: 'https://images.unsplash.com/photo-1516426122078-8023e76319a7?w=800&h=600&fit=crop',
+    image:  aberdarePark,
   },
   {
     id: 'guided-treks',
     name: 'Guided Nature Walks',
     description: 'Immerse yourself in nature with expert-guided walks through pristine forests and scenic trails.',
-    image: 'https://images.unsplash.com/photo-1552632558-7ffb8c73a2a6?w=800&h=600&fit=crop',
+    image: natureWalks,
   },
   {
     id: 'picnicking',
     name: 'Golden Gate Picnicking',
     description: 'Enjoy a memorable picnic in scenic locations with prepared meals and stunning views.',
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=600&fit=crop',
+    image:  picnic ,
   },
   {
     id: 'bush-dinners',
     name: 'Bush Dinners',
     description: 'Experience authentic outdoor dining under the stars with local cuisine and warm hospitality.',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&h=600&fit=crop',
+    image:  bushdinner,
   },
   {
     id: 'sweetwaters',
     name: 'Sweetwaters Game Reserve',
     description: 'Wildlife safari at a private game reserve featuring diverse animal species and scenic landscapes.',
-    image: 'https://images.unsplash.com/photo-1516426122078-8023e76319a7?w=800&h=600&fit=crop',
+    image:  sweetwaters,
   },
   {
     id: 'thompson-falls',
     name: 'Thompson Falls',
     description: 'Visit the stunning Thompson Falls waterfall, a natural wonder near Nyeri with breathtaking views.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
+    image: thompsonFalls,
   },
   {
     id: 'mau-mau-cave',
